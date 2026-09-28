@@ -307,7 +307,7 @@ function Footer() {
             <p className="eyebrow text-background/45">Vansh Wadhwani · CEO</p>
             <a className="focus-ring mt-2 block text-sm font-semibold underline decoration-background/25 underline-offset-4 hover:decoration-background" data-testid="link-footer-whatsapp" href={WHATSAPP_URL} rel="noreferrer" target="_blank">{PHONE_DISPLAY}</a>
           </div>
-          <a className="focus-ring rounded-full border border-background/25 p-3 transition-colors hover:bg-background/10" data-testid="link-footer-qr" href={WHATSAPP_URL} rel="noreferrer" target="_blank"><img className="h-16 w-16 rounded-lg bg-[#f8f7ef] p-1.5 mix-blend-screen" src={QR_URL} alt="QR code to chat with nearby on WhatsApp" /></a>
+          <a className="focus-ring rounded-full border border-background/25 p-2 transition-colors hover:bg-background/10" data-testid="link-footer-ceo-photo" href={WHATSAPP_URL} rel="noreferrer" target="_blank" aria-label={`Chat with ${CEO_NAME} on WhatsApp`}><img className="ceo-avatar h-14 w-14 rounded-full object-cover" src="/vansh-wadhwani.png" alt={`${CEO_NAME}, Founder & CEO`} /></a>
         </div>
       </div>
       <div className="mx-auto max-w-[1440px] px-5 pb-7 sm:px-8 lg:px-12"><p className="text-[10px] font-medium uppercase tracking-[.18em] text-background/35">nearby DIGITAL PRESENCE</p></div>
