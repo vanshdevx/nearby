@@ -1,0 +1,129 @@
+Add a new “Projects” section/page to the existing Nearby website.
+
+IMPORTANT:
+Keep the exact existing Nearby branding, colors, typography, spacing, navigation, buttons, and overall visual language. Do not redesign the rest of the website.
+
+PROJECTS PAGE
+
+Add “Projects” to the main navigation between “Services” and “Contact”.
+
+The page should showcase real businesses Nearby has worked with.
+
+Hero section:
+
+“Projects”
+“Some of the businesses we’ve helped get found and get seen.”
+
+Keep this section short and visual.
+
+PORTFOLIO GRID
+
+Create a clean responsive image grid of project cards.
+
+Each project card should contain:
+- A large image/thumbnail
+- Business/restaurant name
+- Short category such as “Café”, “Restaurant”, etc.
+- A very short description of what Nearby worked on
+- Optional small tags showing the services provided
+
+Use a modern editorial-style grid rather than generic rectangular cards.
+
+For example:
+
+[ LARGE IMAGE ]
+Café Name
+Café • Ajmer
+Google Business • Instagram • Content
+
+[ IMAGE ] [ IMAGE ]
+Restaurant Name       Café Name
+Restaurant • Ajmer    Café • Ajmer
+Instagram             Digital Setup
+
+The grid should automatically become:
+- 3 columns on desktop
+- 2 columns on tablet
+- 1 column on mobile
+
+PROJECT CARD INTERACTION
+
+When a user clicks a project, open a clean project detail view/modal rather than sending them to an empty page.
+
+The detail view should show:
+- Larger project images
+- Business name
+- Category/location
+- “What we did”
+- Services provided
+- Optional short project description
+
+Keep it visual and concise.
+
+Do NOT create fake project information.
+
+For now, create the portfolio system using placeholder project entries clearly labelled “Add Project”, so I can replace them with my actual restaurant images and information later.
+
+Make the project data easy to edit in one place in the code, for example:
+
+projects = [
+  {
+    name: "...",
+    category: "...",
+    location: "...",
+    description: "...",
+    services: ["Instagram", "Google Business"],
+    images: ["..."]
+  }
+]
+
+I want to be able to add another restaurant by simply adding another object to this list.
+
+PROJECT IMAGES
+
+Make the image system support multiple images per project.
+
+The main Projects grid should use the first image as the cover.
+
+When a project is opened, show the rest of its images in a small gallery/carousel.
+
+Use proper image cropping and consistent aspect ratios so the portfolio looks polished even when uploaded photos have different dimensions.
+
+Do NOT use random stock photos once I provide real project images.
+
+EMPTY / FUTURE PROJECTS
+
+If there are no projects yet, show a tasteful empty state:
+
+“More projects coming soon.”
+“Building better digital presences, one local business at a time.”
+
+Do not show broken images or empty cards.
+
+CTA AT THE BOTTOM
+
+After the portfolio:
+
+“Want to see your business here?”
+
+“Let’s build something.”
+
+Button:
+“Talk to Nearby”
+
+The button should open WhatsApp:
+https://wa.me/916378034887
+
+Keep the Projects page minimal.
+
+No testimonials.
+No fake statistics.
+No unnecessary animations.
+No fake client logos.
+No giant paragraphs.
+
+The purpose of this page is simple:
+
+SHOW THE WORK.
+
+Make the images the main focus and let the branding/content support them.
