@@ -1,6 +1,7 @@
 import { type ReactNode, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ArrowDown, ArrowUpRight, Check, Menu, MoveRight, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, BadgeCheck, Camera, Check, Menu, MoveRight, Palette, X } from 'lucide-react';
+import { SiGooglemaps, SiInstagram, SiSwiggy, SiZomato } from 'react-icons/si';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -10,16 +11,26 @@ import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 const queryClient = new QueryClient();
 const WHATSAPP_URL = 'https://wa.me/916378034887';
 const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&data=${encodeURIComponent(WHATSAPP_URL)}`;
+const CEO_NAME = 'Vansh Wadhwani';
+const PHONE_DISPLAY = '+91 63780 34887';
 
 type ServiceTab = 'onboarding' | 'instagram' | 'creative';
 
-const onboardingServices = [
-  ['01', 'Google Business Setup', 'Google Maps / Business profile setup, location, timings, contact details, photos and optimization.', '₹2,000'],
-  ['02', 'Food Platform Setup', 'Zomato, Swiggy and District profiles with menu & business information setup.', '₹3,500'],
-  ['03', 'Instagram Setup', 'Professional account setup, bio, contact details, profile optimization and highlights.', '₹1,500'],
-  ['04', 'Menu & Photos', 'Menu formatting & uploading, photo uploading and basic photo setup.', '₹1,000'],
-  ['05', 'Registration & Verification', 'Platform registration, OTP & verification, document submission assistance.', '₹1,000'],
-  ['06', 'Initial Design & Branding', 'Basic profile graphics, initial promotional material and consistent branding across platforms.', '₹1,000'],
+type OnboardingService = {
+  number: string;
+  title: string;
+  description: string;
+  price: string;
+  mark: 'google' | 'food' | 'instagram' | 'photos' | 'verification' | 'branding';
+};
+
+const onboardingServices: OnboardingService[] = [
+  { number: '01', title: 'Google Business Setup', description: 'Google Maps / Business profile setup, location, timings, contact details, photos and optimization.', price: '₹2,000', mark: 'google' },
+  { number: '02', title: 'Food Platform Setup', description: 'Zomato, Swiggy and District profiles with menu & business information setup.', price: '₹3,500', mark: 'food' },
+  { number: '03', title: 'Instagram Setup', description: 'Professional account setup, bio, contact details, profile optimization and highlights.', price: '₹1,500', mark: 'instagram' },
+  { number: '04', title: 'Menu & Photos', description: 'Menu formatting & uploading, photo uploading and basic photo setup.', price: '₹1,000', mark: 'photos' },
+  { number: '05', title: 'Registration & Verification', description: 'Platform registration, OTP & verification, document submission assistance.', price: '₹1,000', mark: 'verification' },
+  { number: '06', title: 'Initial Design & Branding', description: 'Basic profile graphics, initial promotional material and consistent branding across platforms.', price: '₹1,000', mark: 'branding' },
 ];
 
 const instagramPlans = [
@@ -47,6 +58,31 @@ function SectionLabel({ number, children }: { number: string; children: ReactNod
       <span className="eyebrow">{children}</span>
     </div>
   );
+}
+
+function ServiceMark({ kind }: { kind: OnboardingService['mark'] }) {
+  if (kind === 'google') {
+    return <div className="service-mark text-[#4285f4]" aria-label="Google Maps logo"><SiGooglemaps size={21} /></div>;
+  }
+  if (kind === 'food') {
+    return (
+      <div className="service-mark gap-1.5 text-foreground" aria-label="Zomato, Swiggy and District logos">
+        <SiZomato size={17} className="text-[#e23744]" />
+        <SiSwiggy size={17} className="text-[#fc8019]" />
+        <span className="font-mono text-[8px] font-bold tracking-[-.08em]">DIST.</span>
+      </div>
+    );
+  }
+  if (kind === 'instagram') {
+    return <div className="service-mark text-[#c13584]" aria-label="Instagram logo"><SiInstagram size={20} /></div>;
+  }
+  if (kind === 'photos') {
+    return <div className="service-mark text-muted-foreground" aria-label="Menu and photography"><Camera size={20} strokeWidth={1.8} /></div>;
+  }
+  if (kind === 'verification') {
+    return <div className="service-mark text-muted-foreground" aria-label="Registration and verification"><BadgeCheck size={21} strokeWidth={1.8} /></div>;
+  }
+  return <div className="service-mark text-muted-foreground" aria-label="Design and branding"><Palette size={20} strokeWidth={1.8} /></div>;
 }
 
 function Header() {
@@ -142,9 +178,12 @@ function OnboardingPanel() {
         <span className="rounded-full bg-secondary px-4 py-2 text-[11px] font-bold uppercase tracking-[.13em]">One-Time Setup Package</span>
       </div>
       <div className="overflow-hidden rounded-[1.5rem] border border-border bg-background">
-        {onboardingServices.map(([number, title, description, price]) => (
-          <div className="grid gap-4 border-b border-border p-5 last:border-b-0 sm:grid-cols-[52px_1fr_auto] sm:items-start sm:gap-5 sm:p-6" data-testid={`row-onboarding-${number}`} key={number}>
-            <span className="font-mono text-xs font-bold text-muted-foreground">{number}</span>
+        {onboardingServices.map(({ number, title, description, price, mark }) => (
+          <div className="grid gap-4 border-b border-border p-5 last:border-b-0 sm:grid-cols-[72px_1fr_auto] sm:items-start sm:gap-5 sm:p-6" data-testid={`row-onboarding-${number}`} key={number}>
+            <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2">
+              <ServiceMark kind={mark} />
+              <span className="font-mono text-xs font-bold text-muted-foreground">{number}</span>
+            </div>
             <div><h4 className="text-sm font-bold">{title}</h4><p className="mt-1.5 max-w-[600px] text-sm leading-6 text-muted-foreground">{description}</p></div>
             <span className="font-display text-2xl tracking-[-.04em] sm:pt-[-2px]">{price}</span>
           </div>
@@ -240,7 +279,18 @@ function Contact() {
   return (
     <section className="section-pad scroll-mt-8 border-t border-border" id="contact">
       <div className="mx-auto grid max-w-[1440px] gap-14 px-5 sm:px-8 lg:grid-cols-[1fr_300px] lg:items-end lg:px-12">
-        <div><SectionLabel number="02">Contact</SectionLabel><h2 className="mt-10 max-w-[760px] font-display text-[clamp(3.3rem,8vw,7.5rem)] leading-[.88] tracking-[-.065em]" data-testid="heading-contact">Let’s build your<br /><span className="text-muted-foreground">digital presence.</span></h2><div className="mt-12 flex flex-wrap items-center gap-5"><WhatsAppButton className="bg-foreground px-6 py-4 text-sm font-bold text-background" testId="link-contact-whatsapp">Chat on WhatsApp</WhatsAppButton><a className="focus-ring text-sm font-bold underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground" data-testid="link-contact-phone" href={WHATSAPP_URL} rel="noreferrer" target="_blank">+91 63780 34887</a></div></div>
+        <div>
+          <SectionLabel number="02">Contact</SectionLabel>
+          <h2 className="mt-10 max-w-[760px] font-display text-[clamp(3.3rem,8vw,7.5rem)] leading-[.88] tracking-[-.065em]" data-testid="heading-contact">Let’s build your<br /><span className="text-muted-foreground">digital presence.</span></h2>
+          <div className="mt-10 border-l border-foreground/30 pl-5">
+            <p className="eyebrow text-foreground/60">Founder &amp; CEO</p>
+            <p className="mt-2 font-display text-3xl tracking-[-.04em]" data-testid="text-ceo-name">{CEO_NAME}</p>
+            <a className="focus-ring mt-2 inline-block text-sm font-semibold underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground" data-testid="link-contact-phone" href={WHATSAPP_URL} rel="noreferrer" target="_blank">{PHONE_DISPLAY}</a>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <WhatsAppButton className="bg-foreground px-6 py-4 text-sm font-bold text-background" testId="link-contact-whatsapp">Chat on WhatsApp</WhatsAppButton>
+          </div>
+        </div>
         <a className="focus-ring group flex items-center gap-5 rounded-[1.5rem] border border-border bg-secondary/45 p-5 transition-colors hover:bg-secondary" data-testid="link-contact-qr" href={WHATSAPP_URL} rel="noreferrer" target="_blank"><img className="h-[112px] w-[112px] rounded-xl bg-[#f8f7ef] p-2 mix-blend-multiply" src={QR_URL} alt="QR code to chat with nearby on WhatsApp" data-testid="img-contact-qr" /><span className="text-sm font-semibold leading-5">Scan to start<br />a conversation <ArrowUpRight className="mt-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" size={16} /></span></a>
       </div>
     </section>
@@ -252,7 +302,13 @@ function Footer() {
     <footer className="border-t border-border bg-foreground text-background">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-5 py-10 sm:px-8 lg:flex-row lg:items-end lg:justify-between lg:px-12">
         <div><img className="w-[125px] brightness-0 invert" src="/nearby-logo.png" alt="nearby DIGITAL PRESENCE" data-testid="img-footer-logo" /><p className="mt-5 font-display text-2xl tracking-[-.04em]">Get Found. Get Seen.</p></div>
-        <div className="flex items-end justify-between gap-8 sm:gap-16"><div><p className="eyebrow text-background/45">WhatsApp</p><a className="focus-ring mt-2 block text-sm font-semibold underline decoration-background/25 underline-offset-4 hover:decoration-background" data-testid="link-footer-whatsapp" href={WHATSAPP_URL} rel="noreferrer" target="_blank">+91 63780 34887</a></div><a className="focus-ring rounded-full border border-background/25 p-3 transition-colors hover:bg-background/10" data-testid="link-footer-qr" href={WHATSAPP_URL} rel="noreferrer" target="_blank"><img className="h-16 w-16 rounded-lg bg-[#f8f7ef] p-1.5 mix-blend-screen" src={QR_URL} alt="QR code to chat with nearby on WhatsApp" /></a></div>
+        <div className="flex items-end justify-between gap-8 sm:gap-16">
+          <div>
+            <p className="eyebrow text-background/45">Vansh Wadhwani · CEO</p>
+            <a className="focus-ring mt-2 block text-sm font-semibold underline decoration-background/25 underline-offset-4 hover:decoration-background" data-testid="link-footer-whatsapp" href={WHATSAPP_URL} rel="noreferrer" target="_blank">{PHONE_DISPLAY}</a>
+          </div>
+          <a className="focus-ring rounded-full border border-background/25 p-3 transition-colors hover:bg-background/10" data-testid="link-footer-qr" href={WHATSAPP_URL} rel="noreferrer" target="_blank"><img className="h-16 w-16 rounded-lg bg-[#f8f7ef] p-1.5 mix-blend-screen" src={QR_URL} alt="QR code to chat with nearby on WhatsApp" /></a>
+        </div>
       </div>
       <div className="mx-auto max-w-[1440px] px-5 pb-7 sm:px-8 lg:px-12"><p className="text-[10px] font-medium uppercase tracking-[.18em] text-background/35">nearby DIGITAL PRESENCE</p></div>
     </footer>

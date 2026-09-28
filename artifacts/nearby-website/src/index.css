@@ -175,6 +175,18 @@
   text-transform: uppercase;
 }
 
+.service-mark {
+  align-items: center;
+  background: hsl(var(--secondary) / .42);
+  border: 1px solid hsl(var(--border) / .8);
+  border-radius: .75rem;
+  display: flex;
+  height: 2.6rem;
+  justify-content: center;
+  min-width: 2.6rem;
+  padding: .45rem;
+}
+
 .hairline-grid {
   background-image: linear-gradient(to right, hsl(var(--border) / .45) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--border) / .45) 1px, transparent 1px);
