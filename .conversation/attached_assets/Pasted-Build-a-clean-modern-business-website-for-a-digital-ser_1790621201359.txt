@@ -1,0 +1,186 @@
+Build a clean, modern business website for a digital services brand called “nearby”.
+
+BRAND / VISUAL IDENTITY
+
+Brand name: nearby
+Tagline: DIGITAL PRESENCE
+Use the supplied Nearby logo as the primary logo.
+Follow the exact visual direction of the logo/invoice:
+Warm off-white / cream background
+Charcoal / near-black typography
+Soft muted lime/green accent
+Very subtle pastel green/beige cards
+Rounded corners
+Clean geometric sans-serif typography
+Lots of whitespace
+Minimal, premium, calm aesthetic
+Do NOT make it look like a generic corporate agency website.
+It should feel like a modern, approachable local digital studio.
+Keep animations subtle and purposeful.
+Fully responsive on mobile and desktop.
+WEBSITE STRUCTURE
+
+Create a simple navigation bar:
+
+nearby logo
+
+Services → Digital Onboarding → Instagram & Content Contact
+
+No fake navigation items, no empty pages, no placeholder links.
+
+HOME Create a simple hero section:
+
+“Get Found. Get Seen.”
+
+Supporting text: “Simple digital solutions for cafés, restaurants and local businesses.”
+
+Short description: “Nearby helps local businesses build a stronger digital presence — from Google and food platforms to Instagram content and visual branding.”
+
+Primary CTA: “Let’s Talk”
+
+Secondary CTA: “View Services”
+
+The “Let’s Talk” button should open WhatsApp using: https://wa.me/916378034887
+
+Add a small WhatsApp QR code somewhere prominent but tasteful, generated from the same WhatsApp link: https://wa.me/916378034887
+
+Do not use a fake QR code or placeholder QR.
+
+SERVICES SECTION
+
+Create a clean tabbed services section.
+
+TAB 1 — DIGITAL ONBOARDING
+
+Title: “Complete Digital Presence Setup”
+
+Subtitle: “For Cafés & Restaurants”
+
+Use the following exact services and pricing from our onboarding invoice:
+
+01 — Google Business Setup Google Maps / Business profile setup, location, timings, contact details, photos and optimization. ₹2,000
+
+02 — Food Platform Setup Zomato, Swiggy and District profiles with menu & business information setup. ₹3,500
+
+03 — Instagram Setup Professional account setup, bio, contact details, profile optimization and highlights. ₹1,500
+
+04 — Menu & Photos Menu formatting & uploading, photo uploading and basic photo setup. ₹1,000
+
+05 — Registration & Verification Platform registration, OTP & verification, document submission assistance. ₹1,000
+
+06 — Initial Design & Branding Basic profile graphics, initial promotional material and consistent branding across platforms. ₹1,000
+
+Show a highlighted total: “Complete Digital Presence Setup” “One-Time Fee” ₹10,000
+
+Clearly indicate that this is a one-time setup package.
+
+TAB 2 — INSTAGRAM & CONTENT
+
+Title: “Instagram Content Plans”
+
+Subtitle: “Consistent content, without the agency price tag.”
+
+Show three clean pricing cards:
+
+BASIC ₹2,999 / month
+
+1 Instagram post per week
+2 stories per week
+Content planning & caption writing
+Relevant hashtags
+Basic account management
+GROWTH ₹5,499 / month
+
+Label this “MOST POPULAR”
+
+2 Instagram posts per week
+4 stories per week
+1 Reel per week
+Content planning & caption writing
+Relevant hashtags
+Basic account management
+PREMIUM ₹8,999 / month
+
+3 Instagram posts per week
+6 stories per week
+1 Reel per week
+One content shoot per month
+Content planning & caption writing
+Relevant hashtags
+Full account management
+Below the plans, create a separate highlighted add-on:
+
+“INFLUENCER REEL SHOOT”
+
+₹2,000 + influencer charges
+
+Includes:
+
+Influencer coordination
+Concept & script
+Shoot at the café
+Reel editing
+Instagram-ready Reel
+Posting copy
+Clearly state: “Influencer charges are separate and depend on the selected influencer.”
+
+Do not invent additional services or prices.
+
+TAB 3 — CONTENT / CREATIVE SERVICES
+
+Create a simple section explaining that nearby can also provide creative support such as:
+
+Social media posts
+Instagram stories
+Reels
+Menu designs
+Promotional creatives
+Basic business branding
+Food photography / content shoots
+Do NOT assign prices to these unless explicitly provided above.
+
+CONTACT
+
+Create a minimal contact section:
+
+“Let’s build your digital presence.”
+
+WhatsApp: +91 63780 34887
+
+Primary button: “Chat on WhatsApp”
+
+Use: https://wa.me/916378034887
+
+Also display a QR code that links to exactly the same WhatsApp URL.
+
+FOOTER
+
+nearby DIGITAL PRESENCE
+
+“Get Found. Get Seen.”
+
+WhatsApp button/QR.
+
+Keep the footer extremely minimal.
+
+IMPORTANT DESIGN RULES
+
+No stock-photo-heavy design.
+No huge gradients.
+No excessive animations.
+No fake testimonials.
+No fake client logos.
+No fake statistics.
+No unnecessary blog section.
+No pricing that wasn't provided above.
+No blank buttons.
+No broken links.
+Every CTA should either scroll to a real section or open WhatsApp.
+Make the WhatsApp QR functional.
+Make the navigation work.
+Make the service tabs work.
+Make all pricing cards responsive.
+Make the website look finished and production-ready rather than like a template.
+The overall feeling should be: minimal + premium + friendly + local + modern.
+
+Think “small creative digital studio that knows what it is doing”, not “massive marketing agency”.

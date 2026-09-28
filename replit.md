@@ -1,6 +1,6 @@
-# [Project name]
+# Nearby Digital Presence
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Nearby is a one-page digital studio website helping cafés, restaurants, and local businesses get found and get seen online.
 
 ## Run & Operate
 
@@ -22,23 +22,30 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/nearby-website/src/App.tsx` — single-page site content and interactions
+- `artifacts/nearby-website/src/index.css` — visual system, responsive layout, and motion
+- `artifacts/nearby-website/public/nearby-logo.png` — supplied Nearby logo
+- `artifacts/nearby-website/index.html` — SEO title and metadata
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The website is frontend-only because its CTA and service information do not require persistent application data.
+- WhatsApp is the sole conversion path, using the exact provided URL across buttons, phone link, and QR codes.
+- The services area is a hash-aware client-side switcher so each service category can be linked directly.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Presents Nearby’s digital onboarding, Instagram/content, and creative service offerings.
+- Shows the exact provided packages and prices with responsive layouts.
+- Provides working anchor navigation, mobile navigation, WhatsApp CTAs, and scannable QR codes.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the brand minimal, premium, friendly, local, and modern; avoid generic agency patterns.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Production builds need the workflow-provided `PORT` and `BASE_PATH` environment variables when run manually.
 
 ## Pointers
 

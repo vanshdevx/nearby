@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Nearby Digital Presence"
+description = "A polished, responsive website for Nearby, a local digital studio helping cafés, restaurants, and small businesses get found and get seen online."
+version = "1.0.0"
+id = "artifacts/nearby-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25250
+
+[services.development]
+run = "pnpm --filter @workspace/nearby-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nearby-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nearby-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25250"
+BASE_PATH = "/"
